@@ -192,7 +192,7 @@ html.menu-open .burger span { background: var(--cream); }
 /* ---------- Héro ---------- */
 .hero { position: relative; min-height: 100svh; padding-top: calc(var(--header-h) + 1vh); display: flex; align-items: center; overflow: hidden; isolation: isolate; }
 .hero__photo { position: absolute; inset: 0; z-index: -3; }
-.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 0%; transform: scale(1.04); }
+.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transform: scale(1.42); transform-origin: 0% 55%; }
 .hero__photo::after { content: ""; position: absolute; inset: 0;
   background:
     linear-gradient(90deg, rgba(247,241,234,.985) 0%, rgba(247,241,234,.95) 36%, rgba(247,241,234,.72) 50%, rgba(247,241,234,.4) 66%, rgba(247,241,234,.3) 100%),
@@ -344,8 +344,8 @@ html.menu-open .burger span { background: var(--cream); }
 
 /* ---------- Soin signature IB SLIM ---------- */
 .signature { background: radial-gradient(70% 60% at 80% 10%, rgba(250,106,0,.22), transparent 60%), linear-gradient(180deg, var(--ink) 0%, #26150c 100%); color: var(--text-light); overflow: hidden; }
-.signature__grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2.5rem, 6vw, 7rem); align-items: center; }
-.signature__media { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3.6; }
+.signature__grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2.5rem, 6vw, 7rem); align-items: start; }
+.signature__media { position: sticky; top: 100px; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3.6; }
 .signature__media img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; transform: scale(1.12); }
 .signature__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(27,18,13,.6), transparent 55%); }
 .badge { position: absolute; left: 1.4rem; bottom: 1.4rem; z-index: 2; display: inline-flex; align-items: center; gap: .7rem; padding: .8rem 1.1rem; border-radius: 999px; background: var(--orange); color: #fff; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; box-shadow: 0 10px 30px -10px rgba(250,106,0,.8); }
@@ -368,8 +368,8 @@ html.menu-open .burger span { background: var(--cream); }
 .signature__cta { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 1rem; }
 
 /* ---------- Spa Jet ---------- */
-.spajet__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2.5rem, 6vw, 7rem); align-items: center; }
-.spajet__media { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; background: var(--ink); }
+.spajet__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2.5rem, 6vw, 7rem); align-items: start; }
+.spajet__media { position: sticky; top: 100px; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; background: var(--ink); }
 .spajet__media img { width: 100%; height: 100%; object-fit: cover; }
 .spajet__overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
 .jet { fill: var(--blue); filter: drop-shadow(0 0 6px rgba(121,183,231,.9)); animation: jetPulse 2.2s ease-in-out infinite; animation-delay: calc(var(--i) * .1s); }
@@ -483,7 +483,7 @@ html.menu-open .burger span { background: var(--cream); }
   .burger { display: block; }
   .hero { padding-top: calc(var(--header-h) + 1vh); }
   .hero__canvas-wrap { inset: auto 0 auto 0; top: 10vh; height: 42vh; -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent 100%); mask-image: linear-gradient(to bottom, #000 65%, transparent 100%); }
-  .hero__photo img { object-position: 62% 20%; }
+  .hero__photo img { object-position: 50% 30%; transform: none; }
   .hero__photo::after { background: linear-gradient(180deg, rgba(247,241,234,.55) 0%, rgba(247,241,234,.7) 35%, rgba(247,241,234,.95) 52%, var(--cream) 100%); }
   .hero__glow { display: none; }
   .hero__inner { padding-top: 40vh; }
@@ -499,7 +499,7 @@ html.menu-open .burger span { background: var(--cream); }
   .tech__pin { height: auto; padding-top: 0; gap: 1.6rem; }
   .tech { padding-block: clamp(64px, 8vw, 96px); }
   .signature__media { aspect-ratio: 16 / 11; }
-  .institut__media { position: static; }
+  .institut__media, .signature__media, .spajet__media { position: static; }
   .institut__content { padding-bottom: 0; margin-top: 3rem; }
   .institut__second { right: 0; bottom: -8%; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
