@@ -6,7 +6,7 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   const hasGSAP = typeof gsap !== 'undefined';
-  if (hasGSAP && typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+  if (hasGSAP && typeof ScrollTrigger !== 'undefined') { gsap.registerPlugin(ScrollTrigger); ScrollTrigger.config({ ignoreMobileResize: true }); }
 
   /* ---------- Défilement fluide ---------- */
   let lenis = null;
@@ -70,7 +70,7 @@
       if (finished || !(loaded || document.readyState === 'complete') || !animDone) return; finished = true;
       clearTimeout(poll);
       gsap.to(pct, { v: 100, duration: .35, ease: 'power2.out', onUpdate: paint });
-      gsap.to(loader, { yPercent: -100, duration: .9, ease: 'power4.inOut', delay: .3, onComplete: () => { loader.remove(); if (lenis) lenis.start(); document.documentElement.classList.remove('is-loading'); done(); } });
+      gsap.to(loader, { yPercent: -100, duration: .9, ease: 'power4.inOut', delay: .3, onComplete: () => { loader.remove(); if (lenis) lenis.start(); document.documentElement.classList.remove('is-loading'); done(); if (typeof ScrollTrigger !== 'undefined') requestAnimationFrame(() => ScrollTrigger.refresh()); } });
     };
     const paint = () => { elPct.textContent = String(Math.round(pct.v)).padStart(2, '0'); elBar.style.width = pct.v + '%'; };
     // On attend les polices (nécessaires aux titres) puis on libère la page ; garde-fou à 3 s.
@@ -321,6 +321,7 @@
       gsap.to(heroWords, { yPercent: 0, opacity: 1, rotateX: 0, duration: 1.3, stagger: .06, ease: 'power4.out', overwrite: true });
       window.dispatchEvent(new CustomEvent('site:ready'));
       setTimeout(() => ScrollTrigger.refresh(), 400);
+      window.addEventListener('load', () => ScrollTrigger.refresh());
     }
   }
   const boot = () => runLoader(start);
