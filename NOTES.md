@@ -36,7 +36,7 @@ puis ouvrir http://127.0.0.1:8765/ (ou n'importe quel serveur statique à la rac
 
 - Toutes les informations (prestations, tarifs, horaires, technologies, marques) proviennent du site actuel. Rien n'a été inventé.
 - Les photos des sections sont celles du site actuel, retravaillées (recadrage, agrandissement). Une séance photo professionnelle améliorerait nettement les sections Expertises et Prestations.
-- La photo de fond du héro vient d'Unsplash (licence Unsplash, usage commercial libre, sans attribution obligatoire) : https://unsplash.com/photos/2c99fff964d7. Elle est servie depuis le CDN Unsplash ; la rapatrier dans `assets/img/` avant la mise en ligne définitive.
+- La photo de fond du héro vient d'Unsplash (licence Unsplash, usage commercial libre, sans attribution obligatoire) : https://unsplash.com/photos/2c99fff964d7. Fichiers locaux `assets/img/hero-visage-{1200,2000,2800}.jpg`.
 - Les liens « Mentions légales », « Données personnelles », « Télécharger la grille tarifaire » pointent vers des pages à créer.
 - Les chiffres « 80+ protocoles » et « 9 technologies » sont comptés à partir de la grille tarifaire et des pages technologies actuelles.
 
